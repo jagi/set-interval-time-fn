@@ -10,7 +10,10 @@ export const setIntervalTimeFn = (
     time = timeFn(time);
     timers[timerId] = <any>setTimeout(() => {
       fn();
-      nextInterval(time);
+      // Allow clearing interval inside callback function.
+      if (timers[timerId]) {
+        nextInterval(time);
+      }
     }, time);
     return timerId;
   };
