@@ -8,7 +8,10 @@ exports.setIntervalTimeFn = (fn, timeFn) => {
         time = timeFn(time);
         timers[timerId] = setTimeout(() => {
             fn();
-            nextInterval(time);
+            // Allow clearing interval inside callback function.
+            if (timers[timerId]) {
+                nextInterval(time);
+            }
         }, time);
         return timerId;
     };
