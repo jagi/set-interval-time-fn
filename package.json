@@ -1,11 +1,12 @@
 {
   "name": "@jagi/set-interval-time-fn",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "prepublish": "npm run build"
   },
+  "repository": "jagi/set-interval-time-fn",
   "dependencies": {},
   "devDependencies": {
     "typescript": "^2.9.2"
